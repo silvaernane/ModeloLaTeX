@@ -1,0 +1,23 @@
+%ABNT NBR 6029: 5.5 Abreviaturas e siglas. Mencionada pela primeira vez no texto, a forma completa do nome precede a abreviatura ou a sigla colocada entre parênteses.
+
+% A lista de abreviaturas e siglas deve estar em ordem alfabética
+% corrigida da abntex em automatica para UTFPR 
+
+\begin{center}
+\uppercase{\bfseries lista de abreviaturas e siglas}\\[3em]
+\end{center}
+
+%http://www.pirbot.com/mirrors/ctan/macros/latex/contrib/acronym/acronym.pdf
+% \acro{acronym}[short name]{full name}
+
+\begin{acronym}[xxxxxxxxxxxx] % Give the longest label here so that the list is nicely aligned
+
+    \acro  {iot}   [IoT]   {Internet-of-Things}
+    \acro  {icann} [ICANN] {Internet Corporation for Assigned names and Numbers}
+    \acro  {iso}   [ISO]   {International Organization for Standardization}
+    \acro  {ietf}  [IETF]  {Internet Engineering Task Force}    % will not be listed, as it is not used
+
+    %% Define a custom plural form of an acronym   
+    \acrodefplural{iot}[IoTs]{Internets-of-Things}
+
+\end{acronym}
