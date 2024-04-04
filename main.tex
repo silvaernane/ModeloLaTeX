@@ -1,3 +1,7 @@
+% DATA DE FINALIZAÇÃO DESSE MODELO: 04/04/2024
+% Até o presente momento a citação direta não está de acordo com a norma ABNT NBR 10520:2023
+% ACOMPANHAR ALTERAÇÕES NO REPOSITÓRIO: https://github.com/silvaernane/ModeloLaTeX
+% ----------------------------------------------------------
 \documentclass[
 	12pt,				% tamanho da fonte
 	oneside,			% para impressão em frente. Oposto a twoside (frente,costas)
@@ -9,44 +13,182 @@
 	brazil				% o último idioma é o principal do documento
 ]{abntex2}
 
-\setlength{\marginparwidth}{2cm}
+\input{dados-gerais}
 \input{pacotes.tex}
-\urlstyle{same}
 \input{0-capa-rosto/capa}
 \input{0-capa-rosto/folha-de-rosto}
 \renewcommand{\familydefault}{\sfdefault}
 
-%Colocar os dados gerais do trabalho
-% \tipotrabalho{\tipotrabalhoescrito}
-% \instituicao{\instituicaotrabalho}
-
-% \autor{\discente}
-% \titulo{\titulotrabalho}
-% \data{\the\year}
-% \local{\cidadededefesa}
-
-% \orientador{\proforientador}
-% \coorientador{\profcoorientador}
-
+% ----------------------------------------------------------
+% Dados importados de dados-gerais
 \tipotrabalho{\tipotrabalhoescrito}
-\instituicao{Universidade do Estado de Minas Gerais}
-
-\autor{Ernane William Silva}
-\titulo{Trabalho}
+\instituicao{\instituicaoTrabalho}
+\autor{\autorTrabalho}
+\titulo{\tituloTrabalho}
 \data{\the\year}
-\local{Divinopolis}
+\local{\cidade, \estado}
+\orientador{\profOrientador}
+\coorientador{\profCoorientador}
 
-\orientador{Prof}
-\coorientador{Prof}
+% ----------------------------------------------------------
+% CASO NÃO QUEIRA A IMPRESSÃO DE ALGUM ELEMENTO,
+% COMENTE AS LINHAS REFERENTES A ELE.
+% ----------------------------------------------------------
+% ELEMENTOS QUE UTILIZAM O COMANDO \input{}
+% ESTÃO LOCALIZADOS EM ARQUIVOS SEPARADOS, ASSIM COMO 
+% A CAPA E FOLHA DE ROSTO.
+% ----------------------------------------------------------
+% LISTAS QUE NÃO USAM O COMANDO \input{} SÃO GERADAS
+% AUTOMATICAMENTE
+% ----------------------------------------------------------
 
-
+% ----------------------------------
+% Início do documento
 \begin{document}
 
+% ----------------------------------
+% Capa
 \imprimircapa
 
+% ----------------------------------
+% Folha de rosto
 \imprimirfolhaderosto
 
+% ----------------------------------
+% Folha de aprovação
+\input{1-pre-textuais/folha-de-aprovacao}
 
+% ----------------------------------
+% Dedicatória
+\input{1-pre-textuais/dedicatoria}
 
+% ----------------------------------
+% Agradecimentos
+\input{1-pre-textuais/agradecimentos}
 
+% ----------------------------------
+% Epígrafe
+\input{1-pre-textuais/epigrafe}
+
+% ----------------------------------
+% Resumo
+\input{1-pre-textuais/resumo}
+
+% ----------------------------------
+% Abstract (Resumo em Língua Estrangeira)
+\input{1-pre-textuais/abstract}
+
+% ----------------------------------
+% Lista de ilustrações
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+% ----------------------------------
+% Lista de tabelas
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+% ----------------------------------
+% Lista de Quadros
+\pdfbookmark[0]{\listofquadrosname}{loq}
+\listofquadros*
+\cleardoublepage
+
+% ----------------------------------
+% Lista de Abreviaturas
+\input{1-pre-textuais/lista-de-abreviaturas.tex}
+
+% ----------------------------------
+% Lista de Símbolos
+\input{1-pre-textuais/lista-de-simbolos.tex}
+
+% ----------------------------------
+% Lista de Código Fonte
+\pdfbookmark[0]{\listofcodigosname}{loc}
+\listofcodigos*
+\cleardoublepage
+
+% ----------------------------------
+% Sumario
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------
+% Introdução
+\input{2-textuais/1-introducao}
+
+% ----------------------------------
+% Fundamentação Teórica
+\input{2-textuais/2-fundamentacao-teorica}
+
+% ----------------------------------
+% Metodologia
+\input{2-textuais/3-metodologia}
+
+% ----------------------------------
+% Resultados
+\input{2-textuais/4-resultados}
+
+% ----------------------------------------------------------
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaço de parte no Sumário
+% ----------------------------------------------------------
+\phantompart
+
+% ----------------------------------
+% Conclusão
+\input{2-textuais/5-conclusao}
+
+% ----------------------------------
+% Trabalhos Futuros
+\input{2-textuais/6-trabs-futuros}
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ---
+% Referências
+% ---
+\bibliography{referencias-acervo.bib}
+
+% ---
+% Glossário
+% ---
+\input{3-pos-textuais/glossario}
+
+% ---
+% Apêndices
+% ---
+\begin{apendicesenv}
+	\partapendices % Imprime uma página indicando o início dos apêndices
+	%\addcontentsline{toc}{section}{Seção Não Numerada}
+	\input{3-pos-textuais/apendices}
+\end{apendicesenv}
+
+% ---
+% Anexos
+% ---
+\begin{anexosenv}
+	\partanexos % Imprime uma página indicando o início dos anexos
+	\input{3-pos-textuais/anexos}
+\end{anexosenv}
+
+% ---
+% ÍNDICE REMISSIVO
+% ---
+\phantompart
+\printindex
+
+% Fim do documento ------------------------------------------
 \end{document}

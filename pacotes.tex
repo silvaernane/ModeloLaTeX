@@ -62,11 +62,6 @@
     abnt-thesis-year=final
 ]{abntex2cite}
 
-
-
-
-
-
 % --- 
 % Espaçamentos entre linhas e parágrafos 
 % --- 
@@ -94,6 +89,7 @@
 \makeatletter  \def\url@leostyle{%
     \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
 \makeatother \urlstyle{leo}
+\urlstyle{same} %url sem fonte diferente
 
 
 \usepackage{paralist} %https://latex.org/forum/viewtopic.php?t=3376
@@ -120,7 +116,6 @@
 %\graphicspath{{subdir1/}{subdir2/}{subdir3/}...{subdirn/}}
 
 
-
 % Adicionar mais de um tipo de entrada à Lista de ilustrações: Mapa e Desenho
 %% Mapa
 \newcommand{\mapaname}{Mapa}
@@ -139,11 +134,6 @@
 \renewcommand{\cftdesenhoname}{\desenhoname\space}
 \renewcommand*{\cftdesenhoaftersnum}{\hfill--\hfill}
 \setfloatlocations{desenho}{hbtp} % configurando posicionamento padrão
-
-
-
-
-
 
 % % ---
 % % Configurações do pacote backref
@@ -173,11 +163,9 @@
 \renewcommand{\cftpartfont}{\bfseries\normalsize} %diminiu a fonte de Apendices e Anexos
 \renewcommand{\cftpartpagefont}{\bfseries\normalsize}%diminiu o num de pag da fonte de Apendices e Anexos
 
-
 %----------------------------------------------------
 % pacotes para insercao de codigo fonte
 % ---
-
 
 \usepackage{inconsolata}
 \definecolor{pblue}{rgb}{0.13,0.13,1}
@@ -192,10 +180,7 @@
 
 \definecolor{lightpurple}{rgb}{0.8,0.8,1}
 
-
 %--------------
-
-
 
 \usepackage{listings}
 \lstset{
@@ -245,9 +230,6 @@
 \usepackage{nomencl}
 \makenomenclature %uma instrução para ser elaborada a lista
 
-
-
-
 % ----------------------------------------------------
 % Tabelas
 % ---
@@ -257,13 +239,13 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
-
 % ----------------------------------------------------
 % Todo e revisao de textos
 % ---
 
 \usepackage{todonotes}
 \usepackage[normalem]{ulem}
+\setlength{\marginparwidth}{2cm}
 %http://www.ufpa.br/heliton/arquivos/aplicativos/latex/minicurso_latex_2011.pdf
 
 
@@ -331,8 +313,6 @@
     \l@chapapp{\uppercase{#1}}{#2}{\cftsectionname}
 }
 \makeatother
-
-
 
 \renewcommand{\orientadorname}{\normalsize Orientador:}
 \renewcommand{\coorientadorname}{\normalsize Coorientador:}
