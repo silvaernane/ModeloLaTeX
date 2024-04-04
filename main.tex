@@ -1,0 +1,52 @@
+\documentclass[
+	12pt,				% tamanho da fonte
+	oneside,			% para impressão em frente. Oposto a twoside (frente,costas)
+	a4paper,			% tamanho do papel. 
+	% % -- opções da classe abntex2 --
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	brazil				% o último idioma é o principal do documento
+]{abntex2}
+
+\setlength{\marginparwidth}{2cm}
+\input{pacotes.tex}
+\urlstyle{same}
+\input{0-capa-rosto/capa}
+\input{0-capa-rosto/folha-de-rosto}
+\renewcommand{\familydefault}{\sfdefault}
+
+%Colocar os dados gerais do trabalho
+% \tipotrabalho{\tipotrabalhoescrito}
+% \instituicao{\instituicaotrabalho}
+
+% \autor{\discente}
+% \titulo{\titulotrabalho}
+% \data{\the\year}
+% \local{\cidadededefesa}
+
+% \orientador{\proforientador}
+% \coorientador{\profcoorientador}
+
+\tipotrabalho{\tipotrabalhoescrito}
+\instituicao{Universidade do Estado de Minas Gerais}
+
+\autor{Ernane William Silva}
+\titulo{Trabalho}
+\data{\the\year}
+\local{Divinopolis}
+
+\orientador{Prof}
+\coorientador{Prof}
+
+
+\begin{document}
+
+\imprimircapa
+
+\imprimirfolhaderosto
+
+
+
+
+\end{document}

@@ -1,10 +1,25 @@
-\begin{center}
-{\instituicaotrabalho} \\
-{\campus} \\[4.9cm]
-{\textbf{\discente}} \\[4.9cm]
-{\textbf{\titulotrabalho}} \\[4.9cm]
-\vfill
-{\cidade, \estado} \\
-{\ano}
-\end{center}
-\clearpage
+\renewcommand{\imprimircapa}{%
+    \begin{capa}%
+        \center
+        \ABNTEXchapterfont \MakeUppercase{Universidade do Estado de Minas Gerais}
+        \par
+        \textit{CAMPUS} DIVINÓPOLIS
+        \par
+        ENGENHARIA DA COMPUTAÇÃO
+
+        {\vspace*{3cm} \ABNTEXchapterfont\imprimirautor}
+
+        \vfill
+        \begin{center}
+            \ABNTEXchapterfont\bfseries\imprimirtitulo
+            \vspace*{3em}
+        \end{center}
+        \vfill
+
+        \imprimirlocal
+
+        \imprimirdata
+
+        \vspace*{1cm}
+    \end{capa}
+}
