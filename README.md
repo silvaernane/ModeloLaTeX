@@ -4,7 +4,7 @@ Este repositório contém um modelo LaTeX para elaboração de Trabalhos de Conc
 
 ## Como usar
 
-Para utilizar este modelo, você pode fazer o download do arquivo compactado diretamente na seção de releases ou clonar este repositório para o seu computador:
+Para utilizar este modelo, você pode fazer o download do arquivo compactado diretamente na seção de releases e importar no Overleaf ou clonar este repositório para o seu computador:
 
 ```
 git clone https://github.com/silvaernane/ModeloLaTeX.git
